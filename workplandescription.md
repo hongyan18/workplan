@@ -13,3 +13,8 @@
 ## 记事本
 
 ## 会议提醒
+
+## 项目编写记录
+
+1. vue cli3创建项目 yarn add vant 使用vant UI框架
+2. 使用router路由进行页面跳转
