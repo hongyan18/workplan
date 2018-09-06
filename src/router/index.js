@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../components/home.vue'
-import Index from '../components/HelloWorld'
+import Home from '../demo/Home.vue'
+import Index from '../demo/Index'
+import Deteplan from '../demo/dateplan'
+import Todayplan from '../demo/todayplan'
+// import Index from '../components/HelloWorld'
 import Test from '../components/test'
 Vue.use(Router)
 const routes = [
@@ -17,6 +20,16 @@ const routes = [
         path: 'test',
         name: 'test',
         component: Test
+      },
+      {
+        path: 'dateplan',
+        name: 'dateplan',
+        component: Deteplan
+      },
+      {
+        path: 'todayplan',
+        name: 'todayplan',
+        component: Todayplan
       }
     ]
   }
