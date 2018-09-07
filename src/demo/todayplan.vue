@@ -13,7 +13,7 @@
             </ul>
         </div>
 
-        <van-button type="default" @click="test">新增今日任务</van-button>
+        <van-button type="default" @click="test">新增今日计划</van-button>
         <van-cell-group style="margin-top:50px;">
             <van-field
                 label="总述"
@@ -64,14 +64,24 @@
                     />
                 </van-popup>
             </div>
-                <table class="planconten">
-                    <div class="planhead">
-
+              <div class="planhead">
+                        <van-cell-group>
+                        <van-field style="font-size:16px;"
+                            v-model="message"
+                            label="计划标题:"
+                            type="textarea"
+                            placeholder="请输入计划标题"
+                            rows="1"
+                            autosize
+                        />
+                        </van-cell-group>
                     </div>
+                <div class="plancontentitle">任务详情：</div>
+                <table class="planconten">
                     <textarea class="plantextrea"  placeholder="请输入任务详情"></textarea>
                 </table>
                 <!-- 响铃方式 -->
-                <van-radio-group v-model="radio" style="border-top: 1px solid #e4e4e4;">
+                <van-radio-group v-model="radio">
                    <img src="../assets/naozhong.png" style="width:30px;float: left;margin-top: 9px;"> <span class="tixingspan">提醒方式：</span>
                 <van-cell-group>
                     <van-cell title="响铃提醒" clickable @click="radio = '1'">
@@ -162,7 +172,7 @@ html{
     margin-top: 37px;
     margin-left: 1%;
     width: 98%;
-    background-color: #d4d4d4;
+
     overflow: hidden;/*超出显示滚动条*/
     height: 487px;
 
@@ -172,6 +182,11 @@ html{
 }
 .content ul>li{
      overflow: hidden;
+     border-bottom:1px solid #6daaff;
+}
+.content ul>li:hover {
+    background-color:#6daaff;
+    color:white;
 }
 .content .p1{
     float: left;
@@ -186,7 +201,8 @@ html{
     font-size: 14px;
     top: 9px;
     border-radius: 10px;
-    background-color: #fdf9f9;
+    background-color: #6daaff;
+    border: 1px solid #6daaff;
 }
 /*弹出层*/
 .van-popup--right {
@@ -216,7 +232,7 @@ html{
     line-height: 1px;
     overflow: hidden;
     height:60px;
-    border-bottom:1px solid #e4e4e4;
+
 }
 .endtime .title{
     float: left;
@@ -236,18 +252,20 @@ html{
 .planconten{
 
     height:300px;
-    width: 100%;
-
+    width: 98%;
+    border:1px solid #e8e8e8;;
     height: 28px;
     line-height: 28px;
+    margin-left:5px;
+    border-top: 0;
 }
 .planhead{
     text-align:left;
     font-size:17px;
 }
 .plantextrea{
-    width: 100%;
-    height: 275px;
+    width: 99%;
+    height: 201px;
     border: 0;
 }
 .save{
@@ -259,5 +277,12 @@ html{
     line-height: 19px;
     border:1px solid #92c3ff;
     margin-top: 43px;
+}
+.plancontentitle{
+    height: 40px;
+    float: left;
+    line-height: 40px;
+    padding-left: 14px;
+    color: #545454;
 }
 </style>
