@@ -34,10 +34,10 @@
             <div>
                 <div class="starttime">
                     <div class="title">开始时间：</div>
-                <div @click="showTwoPopup" >{{startTime}}</div>
+                    <div @click="showTwoPopup" style="float: left;margin-top: 40px;color:#38f;" >{{startTime}}</div>
                 </div>
 
-                  <!-- 第二个弹出层 -->
+                  <!-- 第二个弹出层 开始时间-->
                 <van-popup v-model="twoPopup" position="bottom" :overlay="false">
                    <van-datetime-picker  @change="getTimeValue" @confirm="close"
                     v-model="currentDate"
@@ -47,8 +47,43 @@
                     />
                 </van-popup>
             </div>
+            <!-- 结束时间 -->
+             <div>
+                <div class="endtime">
+                    <div class="title">结束时间：</div>
+                    <div @click="showTwoPopup" style="float: left;margin-top: 40px;color:#38f;" >{{planendTime}}</div>
+                </div>
 
-            <!-- <label for="">{{timevalue}}</label> -->
+                  <!-- 第二个弹出层 结束时间-->
+                <van-popup v-model="twoPopup" position="bottom" :overlay="false">
+                   <van-datetime-picker  @change="getEndTimeValue" @confirm="close"
+                    v-model="currentDate"
+                    type="datetime"
+                    :min-date="minDate"
+                    :max-date="maxDate"
+                    />
+                </van-popup>
+            </div>
+                <table class="planconten">
+                    <div class="planhead">
+
+                    </div>
+                    <textarea class="plantextrea"  placeholder="请输入任务详情"></textarea>
+                </table>
+                <!-- 响铃方式 -->
+                <van-radio-group v-model="radio" style="border-top: 1px solid #e4e4e4;">
+                   <img src="../assets/naozhong.png" style="width:30px;float: left;margin-top: 9px;"> <span class="tixingspan">提醒方式：</span>
+                <van-cell-group>
+                    <van-cell title="响铃提醒" clickable @click="radio = '1'">
+                    <van-radio name="1" />
+                    </van-cell>
+                    <van-cell title="手机弹窗" clickable @click="radio = '2'">
+                    <van-radio name="2" />
+                    </van-cell>
+                </van-cell-group>
+                </van-radio-group>
+
+           <button class="save">保存</button>
         </van-popup>
     </div>
 </template>
@@ -56,20 +91,25 @@
 export default{
   data () {
     return {
+      message: '',
+      radio: '',
+      treatheight: [{ maxHeight: 100, minHeight: 50 }],
       title: '今日计划',
       show: false,
       startTime: '2018-09-06 09:20', // 开始时间
+      planendTime: '2018-09-06 09:20',
       timevalue: '',
       minHour: 10,
       twoPopup: false, // 开始时间选择
       maxHour: 20,
       minDate: new Date(),
-      maxDate: new Date(2019, 10, 1),
+      maxDate: new Date(2020, 12, 29),
       currentDate: new Date(),
       planlist: [{ content: 'XXXXX计划11' }, { content: 'XXXXX计划22' }, { content: 'XXXXX计划11' }, { content: 'XXXXX计划22' }, { content: 'XXXXX计划11' }, { content: 'XXXXX计划22' }, { content: 'XXXXX计划11' }, { content: 'XXXXX计划22' }, { content: 'XXXXX计划11' }, { content: 'XXXXX计划22' }]
 
     }
   },
+
   methods: {
     goback: function () {
       window.history.back()
@@ -100,6 +140,11 @@ export default{
     // 关闭弹窗
     close: function () {
       this.twoPopup = false
+    },
+    getEndTimeValue: function (e) {
+      this.timevalue = e.getValues()
+      this.timevalue = this.timevalue[0] + '-' + this.timevalue[1] + '-' + this.timevalue[2] + '-' + this.timevalue[3] + '-' + this.timevalue[4]
+      this.planendTime = this.timevalue
     }
   }
 
@@ -154,15 +199,65 @@ html{
     width: 100%;
     height: 100%;
 }
-/* .starttime{
-    height: 50px;
-    background-color:red;
-    width:100%;
+.starttime{
+    font-size: 17px;
+    line-height: 1px;
+    overflow: hidden;
+    height: 60px;
 }
+
 .starttime .title{
     float: left;
+    margin-top: 38px;
+    margin-left: 22%;
 }
-.starttime .content{
+.endtime{
+    font-size: 17px;
+    line-height: 1px;
+    overflow: hidden;
+    height:60px;
+    border-bottom:1px solid #e4e4e4;
+}
+.endtime .title{
     float: left;
-} */
+    margin-left: 22%;
+    margin-top: 38px;
+}
+/* 提醒span */
+ .tixingspan{
+    height: 50px;
+    display: block;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: left;
+    margin-left: 20px;
+    color: red;
+}
+.planconten{
+
+    height:300px;
+    width: 100%;
+
+    height: 28px;
+    line-height: 28px;
+}
+.planhead{
+    text-align:left;
+    font-size:17px;
+}
+.plantextrea{
+    width: 100%;
+    height: 275px;
+    border: 0;
+}
+.save{
+    padding: 13px 71px;
+    border-radius: 8px;
+    background-color: #92c3ff;
+    color: white;
+    font-size: 18px;
+    line-height: 19px;
+    border:1px solid #92c3ff;
+    margin-top: 43px;
+}
 </style>
