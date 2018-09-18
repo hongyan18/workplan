@@ -4,6 +4,8 @@ import Home from '../demo/Home.vue'
 import Index from '../demo/Index'
 import Deteplan from '../demo/dateplan'
 import Todayplan from '../demo/todayplan'
+import TodarContent from '../demo/TodayContent'
+import TodaContentSet from '../demo/Todayplanset'
 // import Index from '../components/HelloWorld'
 import Test from '../components/test'
 Vue.use(Router)
@@ -30,7 +32,18 @@ const routes = [
         path: 'todayplan',
         name: 'todayplan',
         component: Todayplan
+      },
+      {
+        path: 'TodarContent',
+        name: 'TodarContent',
+        component: TodarContent
+      },
+      {
+        path: 'TodaContentSet',
+        name: 'TodaContentSet',
+        component: TodaContentSet
       }
+
     ]
   }
 ]
