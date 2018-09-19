@@ -5,17 +5,21 @@
         </van-nav-bar>
         <!-- 提醒栏 -->
         <div class="today">
-            <span>今日计划提醒</span>
-            <van-notice-bar style="top:15px;"
-            :text="todaytext"
-            left-icon="https://img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
-            />
+            <div class="todayhead">
+                <img src="../assets/提醒.png" alt="">
+                 <p>近期计划提醒</p>
+            </div>
+            <p class="todaycont">完成阿济格绿卡阶段看了感觉奥斯卡多了几分克拉的境况聊放假阿里的康师傅金坷垃德生科技弗兰克大厦就</p>
+            <p class="time">截止时间：{{time}}</p>
         </div>
         <!-- 选择按钮 -->
         <div class="timebt">
-            <van-button type="default" @click="gotodayplan">{{textthree}}</van-button>
+            <button class="defalut">{{textthree}}</button>
+            <button class="primary">{{texttwo}}</button>
+            <button class="warning" @click="gotodayplan" >{{textone}}</button>
+            <!-- <van-button type="default" @click="gotodayplan">{{textthree}}</van-button>
             <van-button type="primary" @click="gotodayplan">{{texttwo}}</van-button>
-            <van-button type="warning"  @click="gotodayplan">{{textone}}</van-button>
+            <van-button type="warning"  @click="gotodayplan">{{textone}}</van-button> -->
         </div>
     </div>
 </template>
@@ -24,15 +28,15 @@ export default{
   data () {
     return {
       title: '日程计划',
-      todaytext: '2018年9月6日任务：xxx项目进度需提高，客户急需xxx项目进度需提高，客户急需',
       textone: '今日计划',
       texttwo: '本周计划',
-      textthree: '本月计划'
+      textthree: '本月计划',
+      time: '2018-9-19  16:21'
     }
   },
   methods: {
     goback: function () {
-      window.history.back()
+      this.$router.push({ path: '/' })
     },
     gotodayplan: function () {
       this.$router.push({ path: '/todayplan' })
@@ -42,13 +46,18 @@ export default{
 </script>
 <style scoped>
 .today{
-    margin-top: 20%;
+    margin-top: 10%;
+    margin-left: 6%;
+    width: 88%;
+    height: 300px;
+    background-color: #e2e2e2;
+    border-radius: 11px;
 }
 .today span{
     color: rgb(219, 102, 102);
 }
 .timebt{
-    margin-top: 30%;
+    margin-top: 17%;
     width: 100%;
 }
 
@@ -56,5 +65,58 @@ export default{
     padding: 0 24px;
     font-size: 14px;
     margin: 0 5px;
+}
+.defalut{
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-color: #b89ff7;
+    background-color: #b89ff7;
+    border-radius: 4px;
+    border-style: double;
+    margin: 0 10px;
+}
+.warning{
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-color: #7ac2ff;
+    background-color: #7ac2ff;
+    border-radius: 4px;
+    border-style: double;
+    margin: 0 10px;
+}
+.primary{
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-color: #8ad792;
+    background-color: #8ad792;
+    border-radius: 4px;
+    border-style: double;
+    margin: 0 10px;
+}
+.todayhead{
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid #d0d5d9;
+}
+.todayhead img{
+    width: 30px;
+    float: left;
+    margin: 10px 0px 0px 23%;
+}
+.todayhead p{
+    float: left;
+    margin-left: 10px;
+}
+ .todaycont{
+    text-align: left;
+    height: 189px;
+    margin-left: 6px;
+    overflow: auto;
+}
+.time{
+    line-height: 11px;
 }
 </style>

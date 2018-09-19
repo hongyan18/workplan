@@ -8,11 +8,15 @@
         <!-- 标题列表 -->
         <div class="content">
             <ul v-for="(item,index) in planlist" :key="index">
-                <li>
+                <li if="item.type===true" style="border-left: 4px solid #a4d7ff;">
                     <p class="p1">任务{{index}}</p>
                     <p class="p2" @click="toContent">XXXXX计划{{item.content}}</p>
-
                 </li>
+                <li else>
+                    <p class="p1">任务{{index}}</p>
+                    <p class="p2" @click="toContent">XXXXX计划{{item.content}}</p>
+                </li>
+
             </ul>
         </div>
         <div>
@@ -26,7 +30,7 @@
                 />
             </van-cell-group>
         </div>
-         <van-button type="default" >保存</van-button>
+        <button>保存</button>
     </div>
 </template>
 <script>
@@ -39,14 +43,14 @@ export default{
       contenttype: false,
       title: '今日计划',
       show: false,
-      planlist: [{ content: 'XXXXX计划11' }, { content: 'XXXXX计划22' }, { content: 'XXXXX计划11' }, { content: 'XXXXX计划22' }, { content: 'XXXXX计划11' }, { content: 'XXXXX计划22' }, { content: 'XXXXX计划11' }, { content: 'XXXXX计划22' }]
+      planlist: [{ content: 'XXXXX计划11', type: true }, { content: 'XXXXX计划22', type: false }, { content: 'XXXXX计划11', type: false }, { content: 'XXXXX计划22', type: true }, { content: 'XXXXX计划11', type: true }, { content: 'XXXXX计划22', type: true }, { content: 'XXXXX计划11', type: false }, { content: 'XXXXX计划22', type: true }]
 
     }
   },
 
   methods: {
     goback: function () {
-      window.history.back()
+      this.$router.push({ path: '/dateplan' })
     },
 
     RedicSet: function () {
@@ -72,13 +76,13 @@ html{
     margin-left: 1%;
     width: 90%;
     font-size:14px;
-    overflow: hidden;/*超出显示滚动条*/
+    overflow: auto;/*超出显示滚动条*/
     height: 487px;
 
 }
 .content ul{
     list-style: none;
-    border-left: 4px solid #a4d7ff;
+
     margin-left: 9%;
     border-bottom-left-radius: 1em;
 }
@@ -88,6 +92,7 @@ html{
     margin-bottom: 12px;
     border-radius: 8px;
     border-top-left-radius: 0;
+    border-left: 4px solid #f58181;
 }
 .content ul>li:hover {
     background-color:#6daaff;
@@ -172,5 +177,14 @@ html{
     line-height: 41px;
     float: left;
     margin-left: 10px;
+}
+button{
+    margin-top: 26px;
+    width: 127px;
+    height: 44px;
+    background: #33a8ff;
+    border-radius: 8px;
+    border: 1px solid #33a8ff;
+    color: white;
 }
 </style>

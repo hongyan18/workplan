@@ -9,11 +9,11 @@
         <!-- 日期控件 -->
         <div class="starttime">
             <van-icon name="clock" style="float: left; left: 13%;line-height: 40px;"   color="black"  size="20px" />
-            <div class="title">开始时间：<span style="color:blue;" @click="showStartPopup">{{startTime}}</span></div>
+            <div class="title">开始时间：<span style="color:#33a8ff;" @click="showStartPopup">{{startTime}}</span></div>
         </div>
         <div class="endtime">
             <van-icon name="clock" style="float: left; left: 13%;line-height: 40px;"   color="black"  size="20px" />
-            <div class="title">结束时间：<span style="color:blue;" @click="showEndtPopup">{{endtime}}</span></div>
+            <div class="title">结束时间：<span style="color:#33a8ff;" @click="showEndtPopup">{{endtime}}</span></div>
         </div>
             <!-- 第一个弹出层 开始时间-->
             <van-popup v-model="starttimePopup" position="bottom" :overlay="false">
@@ -55,6 +55,7 @@
                     </div>
                 </div>
             </van-popup>
+            <button>保存</button>
     </div>
 </template>
 <script>
@@ -201,7 +202,6 @@ export default{
     background-color: #efefef;
     width: 100%;
     height: 400px;
-
 }
 .setcontent{
     width: 96%;
@@ -301,5 +301,13 @@ export default{
     width: 36px;
     float: right;
 }
-
+button{
+    margin-top: 63px;
+    width: 127px;
+    height: 44px;
+    background: #33a8ff;
+    border-radius: 8px;
+    border: 1px solid #33a8ff;
+    color: white;
+}
 </style>
