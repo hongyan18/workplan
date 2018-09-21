@@ -55,7 +55,10 @@
                     </div>
                 </div>
             </van-popup>
-            <button>保存</button>
+            <div class="btndiv">
+                <button>保存</button>
+            </div>
+
     </div>
 </template>
 <script>
@@ -78,7 +81,7 @@ export default{
       day: '',
       minute: '',
       newDate: '',
-      remindlist: [{ title: '截止前15分钟', show: false }, { title: '截止前1小时', show: false }, { title: '截止前3小时', show: false }, { title: '截止前1天', show: false }],
+      remindlist: [{ title: '', show: '' }],
       remindpage: '',
       te: 1
 
@@ -87,9 +90,15 @@ export default{
   /* 页面加载前获取时间 */
   created: function () {
     this.getNewTime()
-    // 默认提前十分钟
+    // 默认提前15分钟
     this.remindlist[0].show = true
     this.remindpage = '截止前15分钟'
+    // 请求数据赋值
+    this.getRequest('/static/static1.json').then(res => {
+      console.log(res)
+      //   赋值
+      this.remindlist = res.data.Todayplanset
+    })
   },
   methods: {
     /* 获取当前时间 */
@@ -309,5 +318,12 @@ button{
     border-radius: 8px;
     border: 1px solid #33a8ff;
     color: white;
+    float: left;
+    margin-left: 40%;
+}
+.btndiv{
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
 }
 </style>

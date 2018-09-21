@@ -37,13 +37,9 @@
 export default{
   data () {
     return {
-      message: '',
-      radio: '',
-      treatheight: [{ maxHeight: 100, minHeight: 50 }],
       contenttype: false,
       title: '今日计划',
-      show: false,
-      planlist: [{ content: 'XXXXX计划11', type: true }, { content: 'XXXXX计划22', type: false }, { content: 'XXXXX计划11', type: false }, { content: 'XXXXX计划22', type: true }, { content: 'XXXXX计划11', type: true }, { content: 'XXXXX计划22', type: true }, { content: 'XXXXX计划11', type: false }, { content: 'XXXXX计划22', type: true }]
+      planlist: [{ content: '', type: '' }]
 
     }
   },
@@ -59,6 +55,13 @@ export default{
     toContent: function () {
       this.$router.push({ path: '/TodarContent' })
     }
+  },
+  created () {
+    this.getRequest('/static/static1.json').then(res => {
+      console.log(res)
+      //   赋值
+      this.planlist = res.data.todayplan
+    })
   }
 
 }
@@ -77,7 +80,7 @@ html{
     width: 90%;
     font-size:14px;
     overflow: auto;/*超出显示滚动条*/
-    height: 487px;
+    height: 400px;
 
 }
 .content ul{
@@ -105,6 +108,8 @@ html{
 .content .p2{
     float: left;
     width: 85%;
+    height: 19px;
+    overflow: hidden;
 }
 .listediticon{
     float: left;

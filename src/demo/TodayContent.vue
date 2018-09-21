@@ -5,18 +5,18 @@
             <van-nav-bar title="任务详情" left-text="返回" left-arrow  @click-left="onClickLeft"/>
         </div>
         <div class="content">
-            <img src="../assets/方框.png" v-show="achieve" alt="" @click="select">
-            <img v-if="achieve===false" src="../assets/选择-方框.png" @click="selecttwo" alt="">
+            <img :src="srcif" v-show="achieve" alt="" @click="select">
+            <img v-if="achieve===false" :src="srcelse" @click="selecttwo" alt="">
             <!-- 内容 -->
             <div class="contenscript">
 
-                <textarea>这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作....</textarea>
+                <textarea v-model="content"></textarea>
 
                 <!-- 内容描述 -->
 
             </div>
             <div class="contentuser">给自己的</div>
-            <div class="contenttime">9月12号 15:54</div>
+            <div class="contenttime">{{contenttime}}</div>
             <div class="fengeline"></div>
             <div class="time">
                 <img src="../assets/time.png" alt="">
@@ -38,8 +38,12 @@
 export default{
   data () {
     return {
+      srcif: '',
+      srcelse: '',
+      content: '',
+      contenttime: '',
       achieve: true, // true标记为未完成
-      endtime: '9月19号  18:00'
+      endtime: ''
     }
   },
   methods: {
@@ -59,6 +63,17 @@ export default{
 
       })
     }
+  },
+  created () {
+    this.getRequest('/static/static1.json').then(res => {
+      console.log(res)
+      //   赋值
+      this.srcif = res.data.TodayContent.srcif // 未完成icon
+      this.srcelse = res.data.TodayContent.srcelse // 完成icon
+      this.content = res.data.TodayContent.content // 内容
+      this.contenttime = res.data.TodayContent.contenttime // 内容发表时间
+      this.endtime = res.data.TodayContent.endtime // 截止时间
+    })
   }
 }
 </script>

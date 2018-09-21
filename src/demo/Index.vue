@@ -21,7 +21,12 @@ export default{
     return {
       title: '主页',
       titleleftbak: false,
-      active: 0
+      active: 0,
+      test1: '测试是否能传递',
+      endtime: '2018-9-21 17:14:00', // 传递的结束时间
+      TXnumber: 1, // 提醒次数
+      ISRemind: true
+
     }
   },
   methods: {
@@ -29,7 +34,7 @@ export default{
       this.$router.push({ path: '/dateplan' })
     },
     test: function () {
-      this.remind()
+      this.remind(this.endtime, this.TXnumber, this.ISRemind)
     }
   }
 }

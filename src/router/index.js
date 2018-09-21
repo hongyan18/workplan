@@ -47,23 +47,7 @@ const routes = [
     ]
   }
 ]
-// const routes = [
-//   {
-//     path: '/',
-//     redirect: '/index'
-//   }, // 如果使用*进行path定义  redirect定向找不到路径会无限循环调用 超出最大调用 （内存溢出）
-//   {
-//     path: '/index',
-//     name: 'index',
-//     component: () => import('./demo/Index.vue'),
 
-//     meta: {
-//       title: '主页'
-//     }
-//   }
-
-// ]
-// add route path
 routes.forEach(route => {
   route.path = route.path || '/' + (route.name || '')
 })

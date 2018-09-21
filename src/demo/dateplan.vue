@@ -6,10 +6,10 @@
         <!-- 提醒栏 -->
         <div class="today">
             <div class="todayhead">
-                <img src="../assets/提醒.png" alt="">
+                <img :src="imgtixing" alt="">
                  <p>近期计划提醒</p>
             </div>
-            <p class="todaycont">完成阿济格绿卡阶段看了感觉奥斯卡多了几分克拉的境况聊放假阿里的康师傅金坷垃德生科技弗兰克大厦就</p>
+            <p class="todaycont">{{content}}</p>
             <p class="time">截止时间：{{time}}</p>
         </div>
         <!-- 选择按钮 -->
@@ -27,11 +27,13 @@
 export default{
   data () {
     return {
+      imgtixing: '',
       title: '日程计划',
       textone: '今日计划',
       texttwo: '本周计划',
       textthree: '本月计划',
-      time: '2018-9-19  16:21'
+      content: '',
+      time: ''
     }
   },
   methods: {
@@ -41,6 +43,15 @@ export default{
     gotodayplan: function () {
       this.$router.push({ path: '/todayplan' })
     }
+  },
+  created () { // 请求数据
+    this.getRequest('/static/static1.json').then(res => {
+      console.log(res)
+      //   赋值
+      this.imgtixing = res.data.dateplan.imgtixing // 提醒图片
+      this.content = res.data.dateplan.content // 任务内容
+      this.time = res.data.dateplan.time // 开始时间
+    })
   }
 }
 </script>
