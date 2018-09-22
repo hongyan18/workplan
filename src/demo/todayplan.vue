@@ -8,11 +8,11 @@
         <!-- 标题列表 -->
         <div class="content">
             <ul v-for="(item,index) in planlist" :key="index">
-                <li if="item.type===true" style="border-left: 4px solid #a4d7ff;">
+                <li v-if="item.type===true" style="border-left: 4px solid #a4d7ff;">
                     <p class="p1">任务{{index}}</p>
                     <p class="p2" @click="toContent">XXXXX计划{{item.content}}</p>
                 </li>
-                <li else>
+                <li v-else>
                     <p class="p1">任务{{index}}</p>
                     <p class="p2" @click="toContent">XXXXX计划{{item.content}}</p>
                 </li>
@@ -58,9 +58,10 @@ export default{
   },
   created () {
     this.getRequest('/static/static1.json').then(res => {
-      console.log(res)
+      // console.log(res)
       //   赋值
       this.planlist = res.data.todayplan
+      console.log(this.planlist)
     })
   }
 

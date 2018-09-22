@@ -3,6 +3,7 @@ import App from './App.vue'
 import Vant from 'vant'
 import 'vant/lib/vant-css/index.css'
 import { router } from './router'
+import store from './Vuex/store'
 
 import { getRequest, postRequest } from './libs/api'// 导入
 Vue.prototype.getRequest = getRequest// 注入到vue对象
@@ -21,6 +22,7 @@ Vue.prototype.remind = function (planendtime, RdNumber, ISRemind) {
     4、看看是否能满足：vue中的生命周期在页面为挂载时开始执行该方法，一直到页面注销
 
   */
+
   let self = this
   let number = 0
   console.log(planendtime)
@@ -50,6 +52,7 @@ Vue.prototype.remind = function (planendtime, RdNumber, ISRemind) {
 }
 
 new Vue({
+  store,
   router,
   render: h => h(App)
 }).$mount('#app')
