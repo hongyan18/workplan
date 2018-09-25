@@ -24,7 +24,7 @@ Vue.prototype.remind = function (planendtime, RdNumber, ISRemind) {
   */
 
   let self = this
-  let number = 0
+  // let number = 0
   console.log(planendtime)
   console.log(RdNumber)
   console.log(ISRemind)
@@ -34,17 +34,24 @@ Vue.prototype.remind = function (planendtime, RdNumber, ISRemind) {
     let endTime = new Date(new Date(planendtime)) // 任务结束时间 要到毫秒
     let t = endTime.getTime() - nowTime.getTime() // 间隔毫秒
     let min = Math.floor((t / 60000) % 60)
-    let sec = Math.floor((t / 1000) % 60)
+    // let sec = Math.floor((t / 1000) % 60)
     min = min < 10 ? '0' + min : min
     self.content = min // 间隔时间
-
-    if (min > 0 && number === 0) {
-      console.log('提醒间隔时间为:' + min + '分' + sec + '秒')
-      // 到时间提醒
-      alert('提醒间隔时间为:' + min + '分' + sec + '秒')
-      number++
-    }
+    // 返回时间
+    console.log(min)
     return min
+
+    // if (min < 4) {
+    //   alert('距离XX任务还有' + min + '分' + sec + '秒')
+    // }
+
+    // if (min > 0 && number === 0) {
+    //   console.log('提醒间隔时间为:' + min + '分' + sec + '秒')
+    //   // 到时间提醒
+    //   alert('提醒间隔时间为:' + min + '分' + sec + '秒')
+    //   number++
+    // }
+
     // else {
     //   clearInterval(timer) // 停止计算
     // }

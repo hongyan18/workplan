@@ -4,7 +4,7 @@
     "TodayContent":{"srcif":"/static/image/方框.png","srcelse":"/static/image/选择-方框.png","content":"这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作....","contenttime":"9月12号 15:54","endtime":"9月19号  18:00"},
     "todayplan":[{ "content": "ssss计划1202021dfdfadfadsfsdf", "type": true }, { "content": "XXXXX计划222", "type": true }, { "content": "XXXXX计划22", "type": true },{ "content": "XXXXX计划11", "type": true }, { "content": "XXXXX计划22", "type": false }, { "content": "XXXXX计划11", "type": true }, { "content": "XXXXX计划22", "type": false }],
     "Todayplanset":[{ "title": "截止前15分钟", "show": true }, { "title": "截止前1小时", "show": false }, { "title": "截止前3小时", "show": false }, { "title": "截止前1天", "show": false }],
-    "Remind":{"planendtime":"2018-09--22 9:20:00","RdNumber":"1","ISRemind":"true"}
+    "Remind":{"planendtime":"2018-09-25 23:58:00","RdNumber":"1","ISRemind":"true"}
 
 
 }
