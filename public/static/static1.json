@@ -3,7 +3,7 @@
     "dateplan":{"imgtixing":"/static/image/提醒.png","content":"完成阿济格绿卡阶段看了感觉奥斯卡多了几分克拉的境况聊放假阿里的康师傅金坷垃德生科技弗兰克大厦就","time":"2018-9-19  16:21"},
     "TodayContent":{"srcif":"/static/image/方框.png","srcelse":"/static/image/选择-方框.png","content":"这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切....这一周将完成十个PSD的切图工作.... 这一周将完成十个PSD的切图工作.....这一周将完成十个PSD的切图工作....","contenttime":"9月12号 15:54","endtime":"9月19号  18:00"},
     "todayplan":[{ "content": "ssss计划1202021dfdfadfadsfsdf", "type": true }, { "content": "XXXXX计划222", "type": true }, { "content": "XXXXX计划22", "type": true },{ "content": "XXXXX计划11", "type": true }, { "content": "XXXXX计划22", "type": false }, { "content": "XXXXX计划11", "type": true }, { "content": "XXXXX计划22", "type": false }],
-    "Todayplanset":[{ "title": "截止前15分钟", "show": "false" }, { "title": "截止前1小时", "show": "false" }, { "title": "截止前3小时", "show": "false" }, { "title": "截止前1天", "show": "false" }],
+    "Todayplanset":[{ "title": "截止前15分钟", "show": true }, { "title": "截止前1小时", "show": false }, { "title": "截止前3小时", "show": false }, { "title": "截止前1天", "show": false }],
     "Remind":{"planendtime":"2018-09--22 9:20:00","RdNumber":"1","ISRemind":"true"}
 
 

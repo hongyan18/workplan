@@ -81,7 +81,7 @@ export default{
       day: '',
       minute: '',
       newDate: '',
-      remindlist: [{ title: '', show: '' }],
+      remindlist: [{ title: '', show: 'false' }],
       remindpage: '',
       te: 1
 

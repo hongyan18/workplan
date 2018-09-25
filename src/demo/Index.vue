@@ -23,7 +23,7 @@ export default{
       titleleftbak: false,
       active: 0,
       test1: '测试是否能传递',
-      endtime: '2018-9-21 17:14:00', // 传递的结束时间
+      endtime: '2018-9-25 18:30:00', // 传递的结束时间
       TXnumber: 1, // 提醒次数
       ISRemind: true
 
@@ -36,6 +36,7 @@ export default{
     test: function () {
       this.remind(this.endtime, this.TXnumber, this.ISRemind)
     }
+
   }
 }
 </script>
