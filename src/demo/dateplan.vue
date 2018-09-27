@@ -15,12 +15,13 @@
         <!-- 选择按钮 -->
         <div class="timebt">
             <button class="defalut">{{textthree}}</button>
-            <button class="primary">{{texttwo}}</button>
+            <button class="primary" @click="goweekplan">{{texttwo}}</button>
             <button class="warning" @click="gotodayplan" >{{textone}}</button>
             <!-- <van-button type="default" @click="gotodayplan">{{textthree}}</van-button>
             <van-button type="primary" @click="gotodayplan">{{texttwo}}</van-button>
             <van-button type="warning"  @click="gotodayplan">{{textone}}</van-button> -->
         </div>
+
     </div>
 </template>
 <script>
@@ -42,6 +43,9 @@ export default{
     },
     gotodayplan: function () {
       this.$router.push({ path: '/todayplan' })
+    },
+    goweekplan: function () {
+      this.$router.push({ path: '/Weekplan' })
     }
   },
   created () { // 请求数据

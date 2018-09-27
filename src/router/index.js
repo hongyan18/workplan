@@ -6,6 +6,8 @@ import Deteplan from '../demo/dateplan'
 import Todayplan from '../demo/todayplan'
 import TodarContent from '../demo/TodayContent'
 import TodaContentSet from '../demo/Todayplanset'
+import Weekplan from '../demo/Weekplan.vue'
+import Weekplanset from '../demo/Weekplanset.vue'
 // import Index from '../components/HelloWorld'
 import Test from '../components/test'
 Vue.use(Router)
@@ -42,6 +44,16 @@ const routes = [
         path: 'TodaContentSet',
         name: 'TodaContentSet',
         component: TodaContentSet
+      },
+      {
+        path: 'Weekplan',
+        name: 'Weekplan',
+        component: Weekplan
+      },
+      {
+        path: 'Weekplanset',
+        name: 'Weekplanset',
+        component: Weekplanset
       }
 
     ]

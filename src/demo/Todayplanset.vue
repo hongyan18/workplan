@@ -70,7 +70,7 @@ export default{
       currentDate: '',
       minDate: new Date(2013, 12, 1),
       maxDate: new Date(2025, 12, 1),
-      startTime: '2018-9-17  16:42',
+      startTime: '2018-09-17  16:42',
       endtime: '2018-10-17  16:42',
       starttimePopup: false, /* 初始弹窗隐藏 */
       endtimePopup: false,
@@ -83,7 +83,8 @@ export default{
       newDate: '',
       remindlist: [{ title: '', show: 'false' }],
       remindpage: '',
-      te: 1
+      te: 1,
+      endtimetoday: '2018-9-26 18:30:00'
 
     }
   },
@@ -99,8 +100,11 @@ export default{
       //   赋值
       this.remindlist = res.data.Todayplanset
     })
+    // 设置定时器  执行的main.js中的函数 刷新的时间30秒
+    // setInterval(this.remind, 10000)
   },
   methods: {
+
     /* 获取当前时间 */
     getNewTime: function () {
       this.myDate = new Date()
@@ -111,7 +115,7 @@ export default{
       this.minute = this.myDate.getMinutes() // 获取当前分钟
       this.nowDate = this.year + '-' + this.month + '-' + this.day + '  ' + this.hour + ':' + this.minute
       this.startTime = this.nowDate
-      /* 结束时间 默认当前时间+1day */
+      /* 结束时间 默认当前时间+1天 */
       this.day = this.day + 1
       this.nowDate = this.year + '-' + this.month + '-' + this.day + '  ' + this.hour + ':' + this.minute
       this.endtime = this.nowDate
@@ -166,9 +170,7 @@ export default{
     goTodaySet: function () {
       this.showRemind = false
     },
-    test: function () {
-      alert(this.radioIsShow)
-    },
+    // 到期提醒
     radioIsShowClk: function () {
       let th = this
       // 到期提醒的全部为false
@@ -254,7 +256,7 @@ export default{
 }
 .remind .p2{
     float: left;
-    margin-top: -49px;
+    margin-top: -46px;
     margin-left: 60%;
 
 }
@@ -318,12 +320,11 @@ button{
     border-radius: 8px;
     border: 1px solid #33a8ff;
     color: white;
-    float: left;
-    margin-left: 40%;
 }
 .btndiv{
     width: 100%;
     height: 120px;
     overflow: hidden;
+    text-align: center;
 }
 </style>
