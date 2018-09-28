@@ -18,7 +18,7 @@
 export default{
   data () {
     return {
-      title: '周计划',
+      title: '本周计划',
       weekcontentlist: [{ day: '周一', name: '计划名称' }, { day: '周二', name: '计划名称' }, { day: '周三', name: '计划名称' }, { day: '周四', name: '计划名称' }, { day: '周五', name: '计划名称' }, { day: '周六', name: '计划名称' }, { day: '周日', name: '计划名称' }]
     }
   },
@@ -40,7 +40,7 @@ export default{
     width: 90%;
     font-size: 14px;
     overflow: auto;
-    height: 587px;
+    height: 500px;
 }
 #week_content ul{
     list-style: none;
@@ -50,7 +50,7 @@ export default{
 #week_content li{
     overflow: hidden;
     background-color: #f0f0f0;
-    margin-bottom: 12px;
+    margin-bottom: 25px;
     border-radius: 8px;
     border-top-left-radius: 0;
     border-left: 4px solid #f58181;

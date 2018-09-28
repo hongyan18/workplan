@@ -19,25 +19,12 @@
 
             </ul>
         </div>
-        <div>
-            <van-cell-group>
-            <van-field
-                label="总述"
-                type="textarea"
-                placeholder="请输入今日计划总述"
-                rows="1"
-                :autosize="contenttype"
-                />
-            </van-cell-group>
-        </div>
-        <button>保存</button>
     </div>
 </template>
 <script>
 export default{
   data () {
     return {
-      contenttype: false,
       title: '今日计划',
       planlist: [{ content: '', type: '' }]
 
@@ -81,7 +68,7 @@ html{
     width: 90%;
     font-size:14px;
     overflow: auto;/*超出显示滚动条*/
-    height: 400px;
+    height: 500px;
 
 }
 .content ul{
@@ -93,15 +80,15 @@ html{
 .content ul>li{
     overflow: hidden;
     background-color: #f0f0f0;
-    margin-bottom: 12px;
+    margin-bottom: 25px;
     border-radius: 8px;
     border-top-left-radius: 0;
     border-left: 4px solid #f58181;
 }
-.content ul>li:hover {
+/* .content ul>li:hover {
     background-color:#6daaff;
     color:white;
-}
+} */
 .content .p1{
     float: left;
     width: 15%;

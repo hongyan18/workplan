@@ -85,8 +85,8 @@ export default{
     color: white;
     padding: 10px 20px;
     font-size: 14px;
-    border-color: #b89ff7;
-    background-color: #b89ff7;
+    border-color: #ffab19;
+    background-color: #ffab19;
     border-radius: 4px;
     border-style: double;
     margin: 0 10px;
@@ -95,8 +95,8 @@ export default{
     color: white;
     padding: 10px 20px;
     font-size: 14px;
-    border-color: #7ac2ff;
-    background-color: #7ac2ff;
+    border-color: #00aaff;
+    background-color: #00aaff;
     border-radius: 4px;
     border-style: double;
     margin: 0 10px;
@@ -105,8 +105,8 @@ export default{
     color: white;
     padding: 10px 20px;
     font-size: 14px;
-    border-color: #8ad792;
-    background-color: #8ad792;
+    border-color: #5ed125;
+    background-color: #5ed125;
     border-radius: 4px;
     border-style: double;
     margin: 0 10px;
@@ -133,5 +133,6 @@ export default{
 }
 .time{
     line-height: 11px;
+    color: #818181;
 }
 </style>

@@ -90,7 +90,7 @@ export default{
 }
 .contenscript textarea{
     width: 100%;
-    height: 200px;
+    height: 261px;
     border: none;
     overflow: auto;
 }

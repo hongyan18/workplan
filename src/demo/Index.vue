@@ -11,7 +11,7 @@
         <van-tabbar v-model="active">
         <van-tabbar-item icon="records" @click="godateplan">日程计划</van-tabbar-item>
         <van-tabbar-item icon="chat">记事本</van-tabbar-item>
-        <van-tabbar-item icon="contact">会议记录</van-tabbar-item>
+        <van-tabbar-item icon="contact" @click="gotime">会议记录</van-tabbar-item>
         </van-tabbar>
     </div>
 </template>
@@ -30,12 +30,16 @@ export default{
   },
   created: function () {
     // 设置定时器  执行的main.js中的函数 刷新的时间30秒
+
     // setInterval(this.remind, 1000)
   },
   methods: {
 
     godateplan: function () {
       this.$router.push({ path: '/dateplan' })
+    },
+    gotime: function () {
+      this.$router.push({ path: '/Time' })
     }
   }
 }

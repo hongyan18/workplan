@@ -10,6 +10,7 @@ import Weekplan from '../demo/Weekplan.vue'
 import Weekplanset from '../demo/Weekplanset.vue'
 // import Index from '../components/HelloWorld'
 import Test from '../components/test'
+import Time from '../demo/time'
 Vue.use(Router)
 const routes = [
   {
@@ -54,6 +55,11 @@ const routes = [
         path: 'Weekplanset',
         name: 'Weekplanset',
         component: Weekplanset
+      },
+      {
+        path: 'Time',
+        name: 'Time',
+        component: Time
       }
 
     ]

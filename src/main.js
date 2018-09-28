@@ -15,10 +15,11 @@ Vue.config.productionTip = false
 // 定义全局alert提醒
 Vue.prototype.remind = function () {
   let rmtime = 0
+
   // 定好方法 在页面创建加载时使用定时器进行定时刷新   表中应该增加提醒次数
-  getRequest('/static/static1.json').then(res => {
+  rmtime = getRequest('/static/static1.json').then(res => {
     rmtime = res.data.Remindday.minute
-    if (rmtime < 15) { // 提前15分钟提醒
+    if (rmtime < 16) { // 提前15分钟提醒
       alert('距离任务' + rmtime + '分钟')
     }
     if (rmtime > 15 && rmtime < 61) { // 提前一个小时提醒
@@ -34,7 +35,9 @@ Vue.prototype.remind = function () {
       rmtime = rmtime - (oclok * 60)
       alert('倒计时' + oclok + '小时' + rmtime + '分钟')
     }
+    return res.data.Remindday.minute
   })
+  return rmtime
   /*
     1请求后台，返回计划表中对应的计划任务
     2根据返回的数据计算与当前时间的间隔
