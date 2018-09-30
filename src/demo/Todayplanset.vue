@@ -1,19 +1,23 @@
 <template>
     <div class="container">
-        <van-nav-bar :title="title" left-text="返回" @click-left="goback" left-arrow>
+        <van-nav-bar :title="title" left-text="返回" right-text="保存" @click-left="goback" @click-right="save" left-arrow>
         </van-nav-bar>
         <textarea class="setcontent" placeholder="请点击输入文字">
 
         </textarea>
+         <div class="titlediv">
+            <label for="">标题：</label>
+            <input type="text" placeholder="请输入计划标题">
+        </div>
 
         <!-- 日期控件 -->
         <div class="starttime">
             <van-icon name="clock" style="float: left; left: 13%;line-height: 40px;"   color="black"  size="20px" />
-            <div class="title">开始时间：<span style="color:#33a8ff;" @click="showStartPopup">{{startTime}}</span></div>
+            <div class="title">开始时间：<span style="color:rgb(51, 136, 255);" @click="showStartPopup">{{startTime}}</span></div>
         </div>
         <div class="endtime">
             <van-icon name="clock" style="float: left; left: 13%;line-height: 40px;"   color="black"  size="20px" />
-            <div class="title">结束时间：<span style="color:#33a8ff;" @click="showEndtPopup">{{endtime}}</span></div>
+            <div class="title">结束时间：<span style="color:rgb(51, 136, 255);" @click="showEndtPopup">{{endtime}}</span></div>
         </div>
             <!-- 第一个弹出层 开始时间-->
             <van-popup v-model="starttimePopup" position="bottom" :overlay="false">
@@ -35,8 +39,9 @@
             </van-popup>
         <div class="remind">
             <p class="p1">到期提醒</p>
+             <img src="../assets/jiantou.png" alt="" @click="showRemindPopup">
             <p class="p2">{{remindpage}}</p>
-            <img src="../assets/jiantou.png" alt="" @click="showRemindPopup">
+
         </div>
             <!-- 到期提醒弹窗 -->
             <van-popup v-model="showRemind" position="right" :overlay="false">
@@ -55,10 +60,6 @@
                     </div>
                 </div>
             </van-popup>
-            <div class="btndiv">
-                <button>保存</button>
-            </div>
-
     </div>
 </template>
 <script>
@@ -204,32 +205,62 @@ export default{
       } else {
         th.remindlist[e].show = false
       }
+    },
+    // 点击右上角保存
+    save: function () {
+      alert('保存成功！')
     }
   }
 }
 </script>
 <style scoped>
 .container{
-    background-color: #efefef;
+
     width: 100%;
     height: 400px;
+}
+.titlediv{
+    background-color: #fff;
+    height: 40px;
+    text-align: left;
+    border-bottom: 1px solid #f2f2f2;
+}
+.titlediv label{
+    line-height: 40px;
+    margin-left: 10px;
+}
+.titlediv input{
+    height: 35px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border: none;
+    border-radius: 3px;
+}
+.titlediv input:focus{border-color: #66afe9;
+outline: 0;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
 }
 .setcontent{
     width: 96%;
     padding: 0px 2%;
-    min-height: 200px;
-    max-height:400px;
+    height: 200px;
     background-color: #fff;
     border: none;
     font-size: 15px;
     margin-top: 10px;
     color: black;
+      border-top: 11px solid #efefef;
+    border-bottom: 11px solid #efefef;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
 }
 .starttime{
     height: 40px;
     width: 100%;
     background-color: #fff;
-    margin-top: 10px;
+    margin-top: 1px;
 }
 .title{
     line-height: 40px;
@@ -242,29 +273,31 @@ export default{
     background-color: #fff;
 }
 .remind{
-    margin-top: 10px;
-    height: 40px;
+
+    height: 39px;
     width: 100%;
     background-color:#fff;
-    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 1px solid #f2f2f2;
+    border-top: 1px solid #f2f2f2;
+
 }
 .remind .p1{
     text-align: left;
-    line-height: 40px;
+    line-height: 8px;
     margin-left: 10px;
     width: 23%;
 }
 .remind .p2{
-    float: left;
-    margin-top: -46px;
-    margin-left: 60%;
+    float: right;
+    margin-top: -32px;
+    margin-right: 13%;
 
 }
 .remind img{
     height: 24px;
     width: 40px;
     float: right;
-    margin-top: -48px;
+    margin-top: -32px;
     margin-right: 6px;
 }
 /* 重写vant 样式*/
@@ -320,11 +353,5 @@ button{
     border-radius: 8px;
     border: 1px solid #33a8ff;
     color: white;
-}
-.btndiv{
-    width: 100%;
-    height: 120px;
-    overflow: hidden;
-    text-align: center;
 }
 </style>

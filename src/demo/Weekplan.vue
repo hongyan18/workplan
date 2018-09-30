@@ -6,7 +6,7 @@
         </van-nav-bar>
         <div id="week_content">
            <ul v-for="(item,index) in weekcontentlist" :key=index>
-               <li>
+               <li @click="gotoWeekContent">
                    <p class="p1">{{item.day}}</p>
                    <p class="p2">{{item.name}}</p>
                </li>
@@ -19,7 +19,7 @@ export default{
   data () {
     return {
       title: '本周计划',
-      weekcontentlist: [{ day: '周一', name: '计划名称' }, { day: '周二', name: '计划名称' }, { day: '周三', name: '计划名称' }, { day: '周四', name: '计划名称' }, { day: '周五', name: '计划名称' }, { day: '周六', name: '计划名称' }, { day: '周日', name: '计划名称' }]
+      weekcontentlist: [{ day: '任务1', name: '计划名称' }, { day: '任务2', name: '计划名称' }, { day: '任务3', name: '计划名称' }, { day: '任务4', name: '计划名称' }, { day: '任务5', name: '计划名称' }, { day: '任务6', name: '计划名称' }, { day: '任务7', name: '计划名称' }]
     }
   },
   methods: {
@@ -29,6 +29,10 @@ export default{
     //
     RedicSet: function () {
       this.$router.push({ path: '/Weekplanset' })
+    },
+    //
+    gotoWeekContent: function () {
+      this.$router.push({ path: '/Weekcentent' })
     }
   }
 }

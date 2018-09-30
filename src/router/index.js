@@ -8,6 +8,7 @@ import TodarContent from '../demo/TodayContent'
 import TodaContentSet from '../demo/Todayplanset'
 import Weekplan from '../demo/Weekplan.vue'
 import Weekplanset from '../demo/Weekplanset.vue'
+import Weekcentent from '../demo/WeekCentent'
 // import Index from '../components/HelloWorld'
 import Test from '../components/test'
 import Time from '../demo/time'
@@ -60,6 +61,11 @@ const routes = [
         path: 'Time',
         name: 'Time',
         component: Time
+      },
+      {
+        path: 'Weekcentent',
+        name: 'Weekcentent',
+        component: Weekcentent
       }
 
     ]
